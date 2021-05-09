@@ -11,6 +11,11 @@ author_profile: true
 
 {% include base_path %}
 
-{% for post in site.publications reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+{% if site.publications.size > 0 %}
+  {% for post in site.publications reversed %}
+    {% include archive-single.html %}
+  {% endfor %}
+  <sup>*</sup> Equal authorship statement
+{% else %}
+  Nothing to see here yet. Check back soon!
+{% endif %}
